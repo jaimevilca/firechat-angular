@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ChatService } from "app/services/chat.service";
+
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  // chats: FirebaseListObservable<any[]>;
+
+  constructor(public chatService: ChatService) {
+    // this.chats = db.list('/chats');
+  }
+
 }

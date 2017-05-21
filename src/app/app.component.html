@@ -1,3 +1,21 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container main-container">
+  <h1>Firechat</h1>
+  <hr>
+  <div id="chat-window" class="chat-window">
+
+    <div class="row" *ngIf="chatService.usuario">
+      <div class="col-md-12 text-right">
+        <button (click)="chatService.logout()" class="btn btn-danger">Salir</button>
+      </div>
+    </div>
+
+
+    <div *ngIf="!chatService.usuario">
+      <app-login></app-login>
+    </div>
+
+    <div *ngIf="chatService.usuario">
+      <app-chat></app-chat>
+    </div>
+  </div>
+</div>
